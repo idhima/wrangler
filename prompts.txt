@@ -1,0 +1,11 @@
+# AI Prompts Log
+
+Prompt 1:
+"How to write a directive in CDAP Wrangler that aggregates values — AggregateStats.java"
+
+Prompt 2:
+"JUnit test for aggregate directive outputting total size and time"
+
+Notes:
+- Used ChatGPT as a guide for syntax help and class structure.
+- All code was reviewed, tweaked, and manually committed.
