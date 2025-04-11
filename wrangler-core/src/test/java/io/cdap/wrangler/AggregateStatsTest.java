@@ -24,3 +24,4 @@ public class AggregateStatsTest {
     Assert.assertEquals(5.0, (double) output.getValue("totalTime"), 0.001);
   }
 }
+
