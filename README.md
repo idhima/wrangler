@@ -164,6 +164,41 @@ These directives are currently available:
 | [JSON](wrangler-docs/functions/json-functions.md)                               | Functions that can be useful in transforming your data           |
 | [Types](wrangler-docs/functions/type-functions.md)                              | Functions for detecting the type of data                         |
 
+---
+
+## 🚀 New Directive: `aggregate-stats`
+
+This directive aggregates byte size and time duration values from the dataset.
+
+### 🔧 Usage
+
+```wrangler
+aggregate-stats :<size_column> :<time_column> <output_size_column> <output_time_column>
+📥 Input Example
+
+data_transfer_size	response_time
+
+|10MB	         1.5s|
+|5MB	          2.5s|
+
+⚙️ Recipe
+aggregate-stats :data_transfer_size :response_time total_size_mb total_time_sec
+
+📤 Output
+total_size_mb	total_time_sec
+|15.0	          4.0|
+
+###Implemented as part of Wrangler enhancement for unit-aware aggregation.
+
+
+Supports units like KB, MB, GB, ms, s, min, h
+Values are auto-converted to MB and seconds
+
+---
+
+### 📝 Commit message:
+```
+
 ## Performance
 
 Initial performance tests show that with a set of directives of high complexity for
